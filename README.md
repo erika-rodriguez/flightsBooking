@@ -73,10 +73,10 @@ public static final Logger LOGGER= Logger.getLogger(String.valueOf(HomePage.clas
 - Selenium can handle static dropdowns with the help of the Select class. A dropdown is identified with <select> tagname and its options are represented with the tagname <option>. 
 - The statement - from selenium.webdriver.support.select import Select should be added to work with Select class.
 ```
-//Identify the <select> WebElement
+Identify the <select> WebElement
 private WebElement currencyDropdown= driver.findElement(By.xpath("locator));
 
-//Create a Select object from org.openqa.selenium.support.ui.Select and star using all its methods to select by Value, Index or Text
+Create a Select object from org.openqa.selenium.support.ui.Select and star using all its methods to select by Value, Index or Text
 Select staticDropdown =new Select(currencyDropdown);
 staticDropdown.selectByIndex(3);
 ```
