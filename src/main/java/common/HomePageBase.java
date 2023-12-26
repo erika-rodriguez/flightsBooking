@@ -13,4 +13,5 @@ public abstract class HomePageBase {
     public abstract WebElement selectUsdCurrency();
     public abstract WebElement selectInrCurrency();
     public abstract WebElement selectAedCurrency();
+    public abstract String selectAdultsPassengers();
 }

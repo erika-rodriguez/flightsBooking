@@ -18,5 +18,10 @@ public class HomeTests extends BaseTest{
         WebElement aedOption= home.selectAedCurrency();
         Assert.assertTrue(aedOption.isSelected());
     }
+    @Test
+    public void addAdultsPassengers(){
+        String adultsCount=home.selectAdultsPassengers();
+        Assert.assertTrue(adultsCount.equals("4 Adult"),"Selection does not match");
+    }
 
 }

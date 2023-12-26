@@ -11,6 +11,9 @@ public class HomePage extends HomePageBase {
         super(driver);
     }
     private WebElement currencyDropdown= driver.findElement(By.xpath("//select[contains(@name,\"Currency\")]"));
+    private WebElement passengersDropdown=driver.findElement(By.cssSelector("div #divpaxinfo"));
+    private WebElement addAdultBtn=driver.findElement(By.id("hrefIncAdt"));
+    private WebElement doneBtn=driver.findElement(By.id("btnclosepaxoption"));
 
     @Override
     public WebElement selectUsdCurrency(){
@@ -31,5 +34,20 @@ public class HomePage extends HomePageBase {
         Select staticDropdown= new Select(currencyDropdown);
         staticDropdown.selectByValue("AED");
         return staticDropdown.getFirstSelectedOption();
+    }
+
+    @Override
+    public String selectAdultsPassengers() {
+        passengersDropdown.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        for (int i = 1; i < 4; i++) {
+            addAdultBtn.click();
+        }
+        doneBtn.click();
+        return passengersDropdown.getText();
     }
 }
