@@ -28,7 +28,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The project focuses on testing the Flights Booking Practice website using core testing tools such as Java, and Selenium Web Driver. The testing process is integrated with Jenkins and using TestRail to provide a comprehensive testing experience. The goal of the project is to improve testing skills and gain experience in web testing.
+The project focuses on testing the Flights Booking Practice website from Rahul Shetty Academy, using core testing tools such as Java, and Selenium Web Driver. The testing process is integrated with Jenkins and using TestRail to provide a comprehensive testing experience. The goal of the project is to improve testing skills and gain experience in web testing.
 
 ### Built With
 
