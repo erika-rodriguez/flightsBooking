@@ -80,6 +80,7 @@ Create a Select object from org.openqa.selenium.support.ui.Select and star using
 Select staticDropdown =new Select(currencyDropdown);
 staticDropdown.selectByIndex(3);
 ```
+
 <!-- WORKFLOW -->
 ## Workflow
 
