@@ -1,6 +1,7 @@
 package common;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class HomePageBase {
     public WebDriver driver;//field
@@ -8,4 +9,8 @@ public abstract class HomePageBase {
     public HomePageBase(WebDriver driver){
         this.driver=driver;
     }
+
+    public abstract WebElement selectUsdCurrency();
+    public abstract WebElement selectInrCurrency();
+    public abstract WebElement selectAedCurrency();
 }
