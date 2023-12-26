@@ -77,7 +77,7 @@ public static final Logger LOGGER= Logger.getLogger(String.valueOf(HomePage.clas
 Identify the <select> WebElement
 private WebElement currencyDropdown= driver.findElement(By.xpath("locator));
 
-Create a Select object from org.openqa.selenium.support.ui.Select and star using all its methods to select by Value, Index or Text
+Create a Select object from org.openqa.selenium.support.ui.Select and start using all its methods to select by Value, Index or Text
 Select staticDropdown =new Select(currencyDropdown);
 staticDropdown.selectByIndex(3);
 ```
