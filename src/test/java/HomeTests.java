@@ -30,4 +30,9 @@ public class HomeTests extends BaseTest{
         home.selectArrivalCity();
     }
 
+    @Test(description = "AutoSuggestive Dropdown")
+    public void resultsMatchSearch(){
+        Assert.assertTrue(home.doResultsMatchSearch(home.typeToSelect("aru"),"ar"),"Results do not match");
+    }
+
 }

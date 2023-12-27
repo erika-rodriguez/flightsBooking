@@ -89,6 +89,28 @@ staticDropdown.selectByIndex(3);
 Identify the elements uniquely, using parent-child locators. For example:
 WebElement dubaiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']/descendant::div[@class='dropdownDiv']/ul/li/a[text()=' Dubai, All Airports(DWC) (DXB)']"));
 ```
+### Study case: AutoSuggestive Dropdown
+- Auto-suggestion or auto-complete functionality offers potential suggestions to users based on their input in a search box or any other input field on a webpage. These suggestions aim to assist users in finding relevant information or completing their input more efficiently. These are implemented as a drop-down list with a list of possible suggestions as the user proceeds to input. This helps the user select the desired term from the list without entering it completely.
+- Dynamic lists of suggestions change with user input, facilitated by AJAX (Asynchronous JavaScript and XML) requests. This ensures a seamless user experience as they type, with suggestions fetched from a server or API in the background.
+- The auto-suggestion list depends on asynchronous calls to show results. Sometimes, this can lead to timing issues if Selenium tries to interact with it instantly, and the suggestion list may not have fully loaded.
+- 
+
+```
+1. Enter the search term in the search box.
+2. Wait for the auto-suggestion list to be available.
+3. Fetch WebElement reference to all the auto-suggestions and store in a List variable of type WebElement.
+4. Create a list of WebElements to catch the results of the search.
+    List<WebElement> results=driver.findElements(By.xpath("//li[@class='ui-menu-item']/a"));
+5.Start a loop to traverse each WebElement from the list.
+    for (WebElement e:results) {
+         System.out.println(e.getText());
+         if (e.getText().toLowerCase().contains(match)){
+            return true;
+         }
+    }
+6. Compare if the auto-suggestion matches the required term. 
+7. Assert that the search term on the results page is the same as expected or not.   
+```
 
 <!-- WORKFLOW -->
 ## Workflow
