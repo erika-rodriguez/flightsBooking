@@ -14,7 +14,8 @@ public class HomePage extends HomePageBase {
     private WebElement passengersDropdown=driver.findElement(By.cssSelector("div #divpaxinfo"));
     private WebElement addAdultBtn=driver.findElement(By.id("hrefIncAdt"));
     private WebElement doneBtn=driver.findElement(By.id("btnclosepaxoption"));
-
+    private WebElement fromDropdown=driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']"));
+    private WebElement toDropdown=driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']"));
     @Override
     public WebElement selectUsdCurrency(){
         Select staticDropdown =new Select(currencyDropdown);
@@ -49,5 +50,29 @@ public class HomePage extends HomePageBase {
         }
         doneBtn.click();
         return passengersDropdown.getText();
+    }
+
+    @Override
+    public void selectDepartureCity() {
+        fromDropdown.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebElement delhiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_originStation1_CTNR']/descendant::div[@class='dropdownDiv']/ul/li/a[text()=' Delhi (DEL)']"));
+        delhiOption.click();
+    }
+
+    @Override
+    public void selectArrivalCity() {
+        toDropdown.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        WebElement dubaiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']/descendant::div[@class='dropdownDiv']/ul/li/a[text()=' Dubai, All Airports(DWC) (DXB)']"));
+        dubaiOption.click();
     }
 }

@@ -24,4 +24,10 @@ public class HomeTests extends BaseTest{
         Assert.assertTrue(adultsCount.equals("4 Adult"),"Selection does not match");
     }
 
+    @Test
+    public void selectDepartureAndArrival(){
+        home.selectDepartureCity();
+        home.selectArrivalCity();
+    }
+
 }

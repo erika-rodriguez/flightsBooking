@@ -14,4 +14,6 @@ public abstract class HomePageBase {
     public abstract WebElement selectInrCurrency();
     public abstract WebElement selectAedCurrency();
     public abstract String selectAdultsPassengers();
+    public abstract void selectDepartureCity();
+    public abstract void selectArrivalCity();
 }

@@ -81,6 +81,14 @@ Create a Select object from org.openqa.selenium.support.ui.Select and start usin
 Select staticDropdown =new Select(currencyDropdown);
 staticDropdown.selectByIndex(3);
 ```
+### Study case: Dynamic Dropdown
+- Some dropdowns are dynamic in nature which means after clicking or selecting any option, the dropdowns values would populate accordingly. And in some cases, you need to mouse hover on an element in Selenium to see the drop-down options.
+- To solve this, we need to use parent-child locators to uniquely identify the elements.
+
+```
+Identify the elements uniquely, using parent-child locators. For example:
+WebElement dubaiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR']/descendant::div[@class='dropdownDiv']/ul/li/a[text()=' Dubai, All Airports(DWC) (DXB)']"));
+```
 
 <!-- WORKFLOW -->
 ## Workflow
