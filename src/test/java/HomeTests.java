@@ -35,4 +35,11 @@ public class HomeTests extends BaseTest{
         Assert.assertTrue(home.doResultsMatchSearch(home.typeToSelect("aru"),"ar"),"Results do not match");
     }
 
+    @Test(description = "Checkbox")
+    public void checkFamilyAndFriendsDiscount(){
+        Assert.assertTrue(home.selectFamilyAndFriendsDiscount().isSelected());
+    }
+
+
+
 }

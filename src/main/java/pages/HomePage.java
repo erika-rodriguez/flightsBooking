@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
+import java.util.TreeMap;
 
 public class HomePage extends HomePageBase {
     public HomePage(WebDriver driver) {
@@ -95,6 +96,19 @@ public class HomePage extends HomePageBase {
         }
         return false;
     }
+    @Override
+    public WebElement selectFamilyAndFriendsDiscount() {
+        WebElement familyAndFriendsCheckbox=driver.findElement(By.xpath("//div[@id='discount-checkbox']//input[contains(@id,'friendsandfamily')]"));
+        familyAndFriendsCheckbox.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return familyAndFriendsCheckbox;
+    }
+
+
 
 
 }

@@ -109,7 +109,15 @@ WebElement dubaiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainConten
 6. Compare if the auto-suggestion matches the required term. 
 7. Assert that the search term on the results page is the same as expected or not.   
 ```
+### Study case: Checkbox
+- Handling checkboxes with Selenium
+```
+Create the locator identifying the checkbox and click it to select it.
+WebElement familyAndFriendsCheckbox=driver.findElement(By.xpath("//div[@id='discount-checkbox']//input[contains(@id,'friendsandfamily')]"));
 
+Assert if it is checked using the method **isSelected()**
+home.selectFamilyAndFriendsDiscount().isSelected()
+```
 <!-- WORKFLOW -->
 ## Workflow
 
