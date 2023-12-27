@@ -93,8 +93,6 @@ WebElement dubaiOption= driver.findElement(By.xpath("//div[@id='ctl00_mainConten
 - Auto-suggestion or auto-complete functionality offers potential suggestions to users based on their input in a search box or any other input field on a webpage. These suggestions aim to assist users in finding relevant information or completing their input more efficiently. These are implemented as a drop-down list with a list of possible suggestions as the user proceeds to input. This helps the user select the desired term from the list without entering it completely.
 - Dynamic lists of suggestions change with user input, facilitated by AJAX (Asynchronous JavaScript and XML) requests. This ensures a seamless user experience as they type, with suggestions fetched from a server or API in the background.
 - The auto-suggestion list depends on asynchronous calls to show results. Sometimes, this can lead to timing issues if Selenium tries to interact with it instantly, and the suggestion list may not have fully loaded.
-- 
-
 ```
 1. Enter the search term in the search box.
 2. Wait for the auto-suggestion list to be available.
