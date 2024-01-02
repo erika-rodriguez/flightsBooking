@@ -6,14 +6,14 @@ import pages.HomePage;
 
 public class BaseTest {
     protected WebDriver driver;
-    protected HomePage home;
+    //protected HomePage home;
 
 
     @BeforeTest
     public void setUp(){
         driver=new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-        home=new HomePage(driver);
+        //home=new HomePage(driver);
     }
 
     @AfterTest

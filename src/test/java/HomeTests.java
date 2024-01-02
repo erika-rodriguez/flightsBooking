@@ -1,8 +1,11 @@
+import common.HomePageBase;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.HomePage;
 
 public class HomeTests extends BaseTest{
+    HomePageBase home;
     @Test
     public void isUsdCurrencySelected(){
         WebElement usdOption=home.selectUsdCurrency();

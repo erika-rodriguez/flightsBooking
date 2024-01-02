@@ -4,21 +4,27 @@ import common.HomePageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
-import java.util.TreeMap;
 
 public class HomePage extends HomePageBase {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-    private WebElement currencyDropdown= driver.findElement(By.xpath("//select[contains(@name,\"Currency\")]"));
-    private WebElement passengersDropdown=driver.findElement(By.cssSelector("div #divpaxinfo"));
-    private WebElement addAdultBtn=driver.findElement(By.id("hrefIncAdt"));
-    private WebElement doneBtn=driver.findElement(By.id("btnclosepaxoption"));
-    private WebElement fromDropdown=driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']"));
-    private WebElement toDropdown=driver.findElement(By.xpath("//input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']"));
+    @FindBy(xpath ="//select[contains(@name,\"Currency\")]")
+    private WebElement currencyDropdown;
+    @FindBy(css = "div #divpaxinfo")
+    private WebElement passengersDropdown;
+    @FindBy(id = "hrefIncAdt")
+    private WebElement addAdultBtn;
+    @FindBy(id = "btnclosepaxoption")
+    private WebElement doneBtn;
+    @FindBy(xpath = "//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']")
+    private WebElement fromDropdown;
+    @FindBy(xpath ="//input[@id='ctl00_mainContent_ddl_destinationStation1_CTXT']")
+    private WebElement toDropdown;
     @Override
     public WebElement selectUsdCurrency(){
         Select staticDropdown =new Select(currencyDropdown);
