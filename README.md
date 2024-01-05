@@ -118,6 +118,40 @@ WebElement familyAndFriendsCheckbox=driver.findElement(By.xpath("//div[@id='disc
 Assert if it is checked using the method **isSelected()**
 home.selectFamilyAndFriendsDiscount().isSelected()
 ```
+### Study case: IRetryAnalizer
+- very time tests fail in a suite, TestNG creates a file called testng-failed.xml in the output directory. This XML file contains the necessary information to rerun only these methods that failed, allowing you to quickly reproduce the failures without having to run the entirety of your tests. Sometimes, you might want TestNG to automatically retry a test whenever it fails. In those situations, you can use a retry analyzer.
+1. Create a class and build an implementation of the interface org.testng.IRetryAnalyzer
+```
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
+ 
+public class MyRetry implements IRetryAnalyzer {
+ 
+  private int retryCount = 0;
+  private static final int maxRetryCount = 3;
+ 
+  @Override
+  public boolean retry(ITestResult result) {
+    if (retryCount < maxRetryCount) {
+      retryCount++;
+      return true;
+    }
+    return false;
+  }
+}
+```
+2. Go to you test class and bind this implementation to the @Test annotation for e.g., @Test(retryAnalyzer = Retry.class)
+```
+import org.testng.Assert;
+import org.testng.annotations.Test;
+ 
+public class TestclassSample {
+  @Test(retryAnalyzer = MyRetry.class)
+  public void test2() {
+    Assert.fail();
+  }
+}
+```
 <!-- WORKFLOW -->
 ## Workflow
 

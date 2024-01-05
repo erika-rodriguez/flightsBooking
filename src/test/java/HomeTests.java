@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 
 public class HomeTests extends BaseTest{
-    HomePageBase home;
+    //HomePage home=new HomePage(driver);
     @Test
     public void isUsdCurrencySelected(){
         WebElement usdOption=home.selectUsdCurrency();
@@ -27,7 +27,7 @@ public class HomeTests extends BaseTest{
         Assert.assertTrue(adultsCount.equals("4 Adult"),"Selection does not match");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void selectDepartureAndArrival(){
         home.selectDepartureCity();
         home.selectArrivalCity();
