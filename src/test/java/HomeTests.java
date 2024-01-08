@@ -4,7 +4,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
 
-@Listeners(LoggingListeners.class)
+@Listeners( LoggingListeners.class)
 public class HomeTests extends BaseTest{
     //HomePage homePage =
     //HomePage home=new HomePage(driver);

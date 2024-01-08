@@ -3,10 +3,11 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-import java.util.logging.Logger;
+import org.testng.log4testng.Logger;
+
 
 public class LoggingListeners implements ITestListener {
-    public static final Logger LOGGER= Logger.getLogger(String.valueOf(LoggingListeners.class));
+    public static final Logger LOGGER= Logger.getLogger(LoggingListeners.class);
     @Override
     public void onTestStart(ITestResult result) {
         LOGGER.info("Start testing "+result.getMethod().getMethodName());
