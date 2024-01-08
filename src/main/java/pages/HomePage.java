@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -27,6 +28,11 @@ public class HomePage extends HomePageBase {
     private WebElement toDropdown;
     @Override
     public WebElement selectUsdCurrency(){
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Select staticDropdown =new Select(currencyDropdown);
         staticDropdown.selectByIndex(3);
         return staticDropdown.getFirstSelectedOption();

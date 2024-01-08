@@ -180,7 +180,10 @@ public class TestclassSample {
 1. Check tickets assigned to you defined in the Project Management Tool (e.g. Trello)
 2. Check TestRail's test case: preconditions, steps, expected results
 3. Create your Feature Branch following naming convention [TCXX]-testName
-4. Add components and pages as needed, using Page Object Model Design Pattern
+4. Add components and pages as needed, implementing Page Object Model Design Pattern using Page Factory. Using the **@FindBy** annotation to initialize web element on the page. Go to you test class and initialize the elements using **initElements()**
+   ```
+    HomePage home= PageFactory.initElements(driver, HomePage.class);
+    ```
 5. Commit your changes, push them to your branch and create a pull request assigning a reviewer
 6. Merge changes to master branch
 

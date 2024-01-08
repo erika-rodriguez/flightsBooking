@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import pages.HomePage;
@@ -13,7 +14,8 @@ public class BaseTest {
     public void setUp(){
         driver=new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
-        home=new HomePage(driver);
+        home= PageFactory.initElements(driver, HomePage.class);
+        //home=new HomePage(driver);
     }
 
     @AfterTest

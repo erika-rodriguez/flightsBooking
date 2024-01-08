@@ -1,4 +1,3 @@
-import common.HomePageBase;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -7,6 +6,7 @@ import pages.HomePage;
 
 @Listeners(LoggingListeners.class)
 public class HomeTests extends BaseTest{
+    //HomePage homePage =
     //HomePage home=new HomePage(driver);
     @Test
     public void isUsdCurrencySelected(){
