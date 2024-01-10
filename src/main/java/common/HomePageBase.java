@@ -21,4 +21,7 @@ public abstract class HomePageBase {
     public abstract List<WebElement> typeToSelect(String search);
     public abstract boolean doResultsMatchSearch(List<WebElement> results,String search);
     public abstract WebElement selectFamilyAndFriendsDiscount();
+    public abstract void selectRoundTripOption();
+    public abstract void selectDepartureDate();
+    public abstract void selectReturnDate();
 }

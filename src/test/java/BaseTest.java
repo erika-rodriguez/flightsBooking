@@ -5,6 +5,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import pages.HomePage;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest {
     protected WebDriver driver;
     protected HomePage home;
@@ -16,6 +18,7 @@ public class BaseTest {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         home= PageFactory.initElements(driver, HomePage.class);
         //home=new HomePage(driver);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @AfterTest
